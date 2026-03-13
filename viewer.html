@@ -10,7 +10,12 @@
   </style>
 </head>
 <body>
-  <!-- Option A: point directly to ONE pdf -->
-  <iframe id="pdf" src="factsheets/Factsheets.pdf"></iframe>
+  <iframe id="pdf"></iframe>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const file = params.get("file") || "factsheets/Factsheets.pdf";
+    document.getElementById("pdf").src = file;
+  </script>
 </body>
 </html>
